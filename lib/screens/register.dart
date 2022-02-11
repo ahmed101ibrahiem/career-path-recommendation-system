@@ -47,27 +47,27 @@ class _RegisterState extends State<Register> {
                 children: [
                   Expanded(
                       child: textForm(false, FnameController, 'First Name')),
-                  SizedBox(
+                  const SizedBox(
                     width: 15,
                   ),
                   Expanded(child: textForm(false, LnameController, 'Last Name'))
                 ],
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               textForm(false, emailController, 'E-mail'),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               textForm(true, passwordController, 'Password'),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               textForm(false, facultyController, 'Faculty'),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               textForm(false, cityController, 'City'),
-              SizedBox(height: 15),
-              Text(
-                'Graduated:',
-                style: TextStyle(
-                    fontSize: 20, color: bottom, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.start,
-              ),
+              const SizedBox(height: 25),
+              // Text(
+              //   'Graduated:',
+              //   style: TextStyle(
+              //       fontSize: 20, color: bottom, fontWeight: FontWeight.bold),
+              //   textAlign: TextAlign.start,
+              // ),
               Row(
                 children: [
                   Radio(
@@ -81,14 +81,14 @@ class _RegisterState extends State<Register> {
                         });
                       }),
                   const Text(
-                    'graduated',
+                    'Graduated',
                     style: TextStyle(
                         fontSize: 18,
                         color: bottom,
                         fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
-                    width: 50,
+                    width: 25,
                   ),
                   Radio(
                       value: 0,
@@ -101,7 +101,7 @@ class _RegisterState extends State<Register> {
                         });
                       }),
                   const Text(
-                    'ungraduated',
+                    'Undergraduated',
                     style: TextStyle(
                         fontSize: 18,
                         color: bottom,
