@@ -4,11 +4,11 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
-import 'package:pharus/methods/buttons.dart';
-import 'package:pharus/methods/textForm.dart';
-import 'package:pharus/screens/success.dart';
+import 'package:pharus/ui/widgets/buttons.dart';
+import 'package:pharus/ui/widgets/textForm.dart';
 
 import 'register.dart';
+import 'success.dart';
 
 class Login extends StatefulWidget {
   static const id = 'Login';

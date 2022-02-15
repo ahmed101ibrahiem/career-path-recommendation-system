@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pharus/screens/register.dart';
-import 'package:pharus/screens/success.dart';
-import 'screens/login.dart';
+import 'package:pharus/ui/screens/splash_screen.dart';
+import 'ui/screens/login.dart';
+import 'ui/screens/onboard.dart';
+import 'ui/screens/register.dart';
+import 'ui/screens/success.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,11 +19,14 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.teal,
         ),
-        home: Login(),
+        home: SplashScreens(),
         routes: {
           Login.id: (context) => Login(),
           Success.id: (context) => Success(),
           Register.id: (context) => Register(),
+          OnboardingScreen.id: (context)=> OnboardingScreen(),
+          SplashScreens.id: (context) => SplashScreens(),
+
         });
   }
 }

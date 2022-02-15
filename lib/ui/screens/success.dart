@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
-import 'package:pharus/methods/buttons.dart';
+import 'package:pharus/ui/widgets/buttons.dart';
 
 class Success extends StatefulWidget {
   static const id = 'Success';
