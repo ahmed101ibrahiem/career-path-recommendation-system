@@ -12,7 +12,7 @@ class QuestionnaireCard extends StatelessWidget {
       elevation: 3,
       color: const Color(0xFFD9D9D9),
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.fromLTRB(10.0, 10.0, 10, 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

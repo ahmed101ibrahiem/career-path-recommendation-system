@@ -108,6 +108,7 @@ else{
         ),
       ),
       body: ListView.builder(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.08),
           itemCount: 10,
           scrollDirection: Axis.vertical,
           reverse: true,
