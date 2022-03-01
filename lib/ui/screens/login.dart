@@ -29,8 +29,12 @@ class _LoginState extends State<Login> {
           children: [
             Container(
               child: CircleAvatar(
-                backgroundColor: border,
-                maxRadius: 120,
+                backgroundColor: circle,
+                foregroundColor: border,
+                maxRadius: 130,
+                child: Image(
+                  image: AssetImage('images/logo.png'),
+                ),
               ),
               height: MediaQuery.of(context).size.height * .4,
             ),

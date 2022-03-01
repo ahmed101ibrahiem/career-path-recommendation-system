@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
+import 'package:pharus/ui/screens/results.dart';
 import 'package:pharus/ui/widgets/buttons.dart';
 
 class Success extends StatefulWidget {
@@ -38,7 +39,11 @@ class _SuccessState extends State<Success> {
             const SizedBox(
               height: 100,
             ),
-            buttons(Colors.white, bottom, 'NEXT !', () {})
+            buttons(Colors.white, bottom, 'NEXT !', () {
+              setState(() {
+                Navigator.pushReplacementNamed(context, Result.id);
+              });
+            })
           ],
         ),
       ),

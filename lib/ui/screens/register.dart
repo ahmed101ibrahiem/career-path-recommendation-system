@@ -1,7 +1,9 @@
 import 'dart:ffi';
 
+import 'package:dropdown_plus/dropdown_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
+import 'package:pharus/ui/widgets/DropDownField.dart';
 import 'package:pharus/ui/widgets/buttons.dart';
 import 'package:pharus/ui/widgets/textForm.dart';
 
@@ -17,8 +19,8 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  // final facultyController = DropdownEditingController<String>();
   final FnameController = TextEditingController();
-  final facultyController = TextEditingController();
   final cityController = TextEditingController();
   final LnameController = TextEditingController();
 
@@ -45,6 +47,7 @@ class _RegisterState extends State<Register> {
                 height: 25,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
                       child: textForm(false, FnameController, 'First Name')),
@@ -59,9 +62,14 @@ class _RegisterState extends State<Register> {
               const SizedBox(height: 15),
               textForm(true, passwordController, 'Password'),
               const SizedBox(height: 15),
-              textForm(false, facultyController, 'Faculty'),
+              DropDownField(
+                //controller: facultyController,
+                data: ['', ''],
+                showIcon: false,
+                labelText: 'Faculty',
+              ),
               const SizedBox(height: 15),
-              textForm(false, cityController, 'City'),
+              DropDownField(data: ['', ''], showIcon: false, labelText: 'City'),
               const SizedBox(height: 25),
               // Text(
               //   'Graduated:',
