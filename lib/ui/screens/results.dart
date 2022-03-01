@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
-import 'package:pharus/ui/screens/recommendJob.dart';
+import 'package:pharus/ui/screens/recommend_Career.dart';
 import 'package:pharus/ui/widgets/buttons.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -104,7 +104,7 @@ class _ResultState extends State<Result> {
               ),
               buttons(Colors.white, bottom, 'NEXT !', () {
                 setState(() {
-                  Navigator.pushNamed(context, RecommendJobs.id);
+                  Navigator.pushNamed(context, RecommendCareer.id);
                 });
               }),
               const SizedBox(

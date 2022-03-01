@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pharus/ui/screens/recommendJob.dart';
+import 'package:pharus/ui/screens/career_detail.dart';
+import 'package:pharus/ui/screens/recommend_Career.dart';
 import 'package:pharus/ui/screens/results.dart';
 import 'package:pharus/ui/screens/splash_screen.dart';
+import 'package:pharus/ui/screens/success2.dart';
 import 'ui/screens/job_zone_screen.dart';
 import 'ui/screens/login.dart';
 import 'ui/screens/onboard.dart';
@@ -27,13 +29,15 @@ class MyApp extends StatelessWidget {
         routes: {
           Login.id: (context) => Login(),
           Success.id: (context) => Success(),
+          SuccessTwo.id: (context) => SuccessTwo(),
           Register.id: (context) => Register(),
           OnboardingScreen.id: (context) => OnboardingScreen(),
           SplashScreens.id: (context) => SplashScreens(),
           Result.id: (context) => Result(),
-          RecommendJobs.id: (context) => RecommendJobs(),
+          RecommendCareer.id: (context) => RecommendCareer(),
           Questionnaire.id: (context) => Questionnaire(),
           JobZoneScreen.id: (context) => JobZoneScreen(),
+          CareerDetails.id: (context) => CareerDetails(),
         });
   }
 }

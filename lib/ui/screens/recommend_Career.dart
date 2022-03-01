@@ -1,17 +1,19 @@
 // ignore_for_file: prefer_final_fields
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
+import 'package:pharus/ui/screens/career_detail.dart';
 import 'package:pharus/ui/screens/results.dart';
 
-class RecommendJobs extends StatefulWidget {
-  static const id = 'RecommendJobs';
+class RecommendCareer extends StatefulWidget {
+  static const id = 'RecommendCareer';
 
   @override
-  _RecommendJobsState createState() => _RecommendJobsState();
+  _RecommendCareerState createState() => _RecommendCareerState();
 }
 
-class _RecommendJobsState extends State<RecommendJobs> {
+class _RecommendCareerState extends State<RecommendCareer> {
   List title = [
     'Agricultural Inspectors',
     'Bicycle Repairers',
@@ -66,7 +68,9 @@ class CardData extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 3),
       child: InkWell(
         borderRadius: BorderRadius.circular(15),
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, CareerDetails.id);
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),

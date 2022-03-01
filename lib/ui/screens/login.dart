@@ -4,6 +4,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
+import 'package:pharus/ui/screens/success2.dart';
 import 'package:pharus/ui/widgets/buttons.dart';
 import 'package:pharus/ui/widgets/textForm.dart';
 
@@ -54,7 +55,7 @@ class _LoginState extends State<Login> {
                     ),
                     buttons(Colors.white, bottom, 'Login', () {
                       setState(() {
-                        Navigator.pushReplacementNamed(context, Success.id);
+                        Navigator.pushReplacementNamed(context, SuccessTwo.id);
                       });
                     }),
                     Row(
