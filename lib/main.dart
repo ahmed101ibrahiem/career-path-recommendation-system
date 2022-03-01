@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:pharus/ui/screens/recommendJob.dart';
 import 'package:pharus/ui/screens/results.dart';
 import 'package:pharus/ui/screens/splash_screen.dart';
+import 'ui/screens/job_zone_screen.dart';
 import 'ui/screens/login.dart';
 import 'ui/screens/onboard.dart';
+import 'ui/screens/questionnaire.dart';
 import 'ui/screens/register.dart';
 import 'ui/screens/success.dart';
 
@@ -30,6 +32,8 @@ class MyApp extends StatelessWidget {
           SplashScreens.id: (context) => SplashScreens(),
           Result.id: (context) => Result(),
           RecommendJobs.id: (context) => RecommendJobs(),
+          Questionnaire.id: (context) => Questionnaire(),
+          JobZoneScreen.id: (context) => JobZoneScreen(),
         });
   }
 }
