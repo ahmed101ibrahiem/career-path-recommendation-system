@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
+import 'package:pharus/models_questionnaire/artistic_mode.dart';
+import 'package:pharus/models_questionnaire/conventional_mode.dart';
+import 'package:pharus/models_questionnaire/enterprising_model.dart';
+import 'package:pharus/models_questionnaire/investigative_model.dart';
+import 'package:pharus/models_questionnaire/realstic_model.dart';
+import 'package:pharus/models_questionnaire/social_model.dart';
 import 'package:pharus/ui/screens/recommend_Career.dart';
 import 'package:pharus/ui/widgets/buttons.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+
+import 'job_zone_screen.dart';
 
 class Result extends StatefulWidget {
   static const id = 'Result';
@@ -13,11 +21,20 @@ class Result extends StatefulWidget {
 
 class _ResultState extends State<Result> {
   List<ExpenseData> _chartData;
+
   @override
   void initState() {
     _chartData = getChartData();
     super.initState();
   }
+
+  int realisticResult = RealstictModel.resultRealistc();
+  int investigativeResult = InvestigativeModel.resultInvestigative();
+  int artisticResult = ArtistiModel.resultArtistic();
+  int socialResult = SocialModel.resultSocial();
+  int enterprisingResult = EnterprisingModel.resultEnterprising();
+
+  int conventionalResult = ConventionalModel.resultConventional();
 
   @override
   Widget build(BuildContext context) {
@@ -73,29 +90,29 @@ class _ResultState extends State<Result> {
                 height: 20,
               ),
               Container(
-                child: text('Realistic', '17'),
+                child: text('Realistic', '${realisticResult}'),
                 color: circle,
                 height: 50,
               ),
               Container(
-                child: text('Investigative', '16'),
+                child: text('Investigative', '${investigativeResult}'),
                 color: circle,
                 height: 50,
               ),
               Container(
-                child: text('Artistic', '13'),
+                child: text('Artistic', '${artisticResult}'),
                 height: 50,
               ),
               Container(
-                child: text('Social', '11'),
+                child: text('Social', '${socialResult}'),
                 height: 50,
               ),
               Container(
-                child: text('Enterprising', '13'),
+                child: text('Enterprising', '${enterprisingResult}'),
                 height: 50,
               ),
               Container(
-                child: text('Conventional', '19'),
+                child: text('Conventional', '${conventionalResult}'),
                 color: circle,
                 height: 50,
               ),
@@ -104,7 +121,7 @@ class _ResultState extends State<Result> {
               ),
               buttons(Colors.white, bottom, 'NEXT !', () {
                 setState(() {
-                  Navigator.pushNamed(context, RecommendCareer.id);
+                  Navigator.pushNamed(context, JobZoneScreen.id);
                 });
               }),
               const SizedBox(
@@ -151,6 +168,7 @@ class _ResultState extends State<Result> {
 
 class ExpenseData {
   ExpenseData(this.expenseCategory, this.result);
+
   final String expenseCategory;
   final num result;
 }

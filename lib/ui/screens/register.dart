@@ -1,6 +1,4 @@
-import 'dart:ffi';
 
-import 'package:dropdown_plus/dropdown_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
 import 'package:pharus/ui/widgets/DropDownField.dart';

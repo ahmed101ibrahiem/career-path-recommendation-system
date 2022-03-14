@@ -41,8 +41,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               });
             } else {
               boardController.nextPage(
-                  duration:const Duration(milliseconds: 750),
-                  curve: Curves.fastLinearToSlowEaseIn);
+                  duration:const Duration(milliseconds: 600),
+                  // Here was the problem
+                  curve: Curves.easeInSine
+              );
             }
           },
           child:const Icon(
