@@ -28,7 +28,7 @@ class _CareerDetailsState extends State<CareerDetails> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(8, 10, 0, 8),
+                    padding: const EdgeInsets.fromLTRB(8, 10, 8, 8),
                     child: Text('Agricultural Inspectors',
                         style: TextStyle(
                             color: Colors.teal,
@@ -44,7 +44,7 @@ class _CareerDetailsState extends State<CareerDetails> {
                   color: circle,
                   width: double.infinity,
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(35, 8, 0, 15),
+                    padding: const EdgeInsets.fromLTRB(35, 8, 10, 15),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

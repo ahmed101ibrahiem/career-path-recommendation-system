@@ -78,6 +78,7 @@ class _RegisterState extends State<Register> {
               //   textAlign: TextAlign.start,
               // ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Radio(
                       value: 1,
@@ -96,9 +97,7 @@ class _RegisterState extends State<Register> {
                         color: bottom,
                         fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(
-                    width: 25,
-                  ),
+                  const SizedBox(width: 25),
                   Radio(
                       value: 0,
                       groupValue: radioValue,
@@ -119,10 +118,9 @@ class _RegisterState extends State<Register> {
                 ],
               ),
               const SizedBox(
-                height: 25,
+                height: 35,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(20, 8, 20, 30),
+              Center(
                 child: buttons(Colors.white, bottom, 'Submit', () {
                   setState(() {
                     Navigator.pushReplacementNamed(context, Success.id);
