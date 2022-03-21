@@ -1,8 +1,18 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
+import 'package:pharus/models_questionnaire/artistic_mode.dart';
+import 'package:pharus/models_questionnaire/conventional_mode.dart';
+import 'package:pharus/models_questionnaire/enterprising_model.dart';
+import 'package:pharus/models_questionnaire/investigative_model.dart';
+import 'package:pharus/models_questionnaire/realstic_model.dart';
+import 'package:pharus/models_questionnaire/social_model.dart';
 import 'package:pharus/ui/screens/recommend_Career.dart';
 import 'package:pharus/ui/widgets/buttons.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+
+import 'job_zone_screen.dart';
 
 class Result extends StatefulWidget {
   static const id = 'Result';
@@ -13,11 +23,21 @@ class Result extends StatefulWidget {
 
 class _ResultState extends State<Result> {
   List<ExpenseData> _chartData;
+  List<int> result;
   @override
   void initState() {
     _chartData = getChartData();
+    result = getResult();
     super.initState();
   }
+
+  int realisticResult = RealstictModel.resultRealistc();
+  int investigativeResult = InvestigativeModel.resultInvestigative();
+  int artisticResult = ArtistiModel.resultArtistic();
+  int socialResult = SocialModel.resultSocial();
+  int enterprisingResult = EnterprisingModel.resultEnterprising();
+
+  int conventionalResult = ConventionalModel.resultConventional();
 
   @override
   Widget build(BuildContext context) {
@@ -73,30 +93,37 @@ class _ResultState extends State<Result> {
                 height: 20,
               ),
               Container(
-                child: text('Realistic', '17'),
-                color: circle,
+                child: text('Realistic', '${realisticResult}'),
+                color:
+                    retrieve(result[0], result[1], result[2], realisticResult),
+                height: 50,
+                width: double.infinity,
+              ),
+              Container(
+                child: text('Investigative', '${investigativeResult}'),
+                color: retrieve(
+                    result[0], result[1], result[2], investigativeResult),
                 height: 50,
               ),
               Container(
-                child: text('Investigative', '16'),
-                color: circle,
-                height: 50,
-              ),
+                  child: text('Artistic', '${artisticResult}'),
+                  height: 50,
+                  color: retrieve(
+                      result[0], result[1], result[2], artisticResult)),
               Container(
-                child: text('Artistic', '13'),
-                height: 50,
-              ),
+                  child: text('Social', '${socialResult}'),
+                  height: 50,
+                  color:
+                      retrieve(result[0], result[1], result[2], socialResult)),
               Container(
-                child: text('Social', '11'),
-                height: 50,
-              ),
+                  child: text('Enterprising', '${enterprisingResult}'),
+                  height: 50,
+                  color: retrieve(
+                      result[0], result[1], result[2], enterprisingResult)),
               Container(
-                child: text('Enterprising', '13'),
-                height: 50,
-              ),
-              Container(
-                child: text('Conventional', '19'),
-                color: circle,
+                child: text('Conventional', '${conventionalResult}'),
+                color: retrieve(
+                    result[0], result[1], result[2], conventionalResult),
                 height: 50,
               ),
               const SizedBox(
@@ -138,19 +165,37 @@ class _ResultState extends State<Result> {
 
   List<ExpenseData> getChartData() {
     final List<ExpenseData> chartData = [
-      ExpenseData('R', 17),
-      ExpenseData('I', 16),
-      ExpenseData('A', 13),
-      ExpenseData('S', 11),
-      ExpenseData('E', 13),
-      ExpenseData('C', 19),
+      ExpenseData('R', realisticResult),
+      ExpenseData('I', investigativeResult),
+      ExpenseData('A', artisticResult),
+      ExpenseData('S', socialResult),
+      ExpenseData('E', enterprisingResult),
+      ExpenseData('C', conventionalResult),
     ];
     return chartData;
+  }
+
+  List<int> getResult() {
+    final List<int> result = [
+      realisticResult,
+      investigativeResult,
+      artisticResult,
+      socialResult,
+      enterprisingResult,
+      conventionalResult
+    ];
+
+    return result..sort((a, b) => b - a);
   }
 }
 
 class ExpenseData {
   ExpenseData(this.expenseCategory, this.result);
+
   final String expenseCategory;
   final num result;
+}
+
+Color retrieve(int x, int y, int z, int mainNum) {
+  return (mainNum == x || mainNum == y || mainNum == z) ? circle : null;
 }

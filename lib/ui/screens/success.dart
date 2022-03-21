@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
-import 'package:pharus/ui/screens/questionnaire.dart';
 import 'package:pharus/ui/widgets/buttons.dart';
+
+import 'questionnaire_page/realistic.dart';
 
 class Success extends StatefulWidget {
   static const id = 'Success';
@@ -40,7 +41,7 @@ class _SuccessState extends State<Success> {
               height: 100,
             ),
             buttons(Colors.white, bottom, 'NEXT !', () {
-              Navigator.pushReplacementNamed(context, Questionnaire.id);
+              Navigator.pushReplacementNamed(context, Realistic.id);
             })
           ],
         ),

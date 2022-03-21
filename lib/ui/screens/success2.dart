@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
 import 'package:pharus/ui/widgets/buttons.dart';
 
+import 'questionnaire_page/realistic.dart';
+
 class SuccessTwo extends StatefulWidget {
   static const id = 'Success2';
 
