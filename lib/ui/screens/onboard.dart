@@ -23,10 +23,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   var boardController = PageController();
 
   List<String> stringOnBOrd = [
-    'Lorem Ipsum is simply dummy text \nof the printing and typesetting \nindustry. Lorem Ipsum has been the \nindustry',
-    'Lorem Ipsum is simply dummy text \nof the printing and typesetting \nindustry. Lorem Ipsum has been the \nindustry',
-    'Lorem Ipsum is simply dummy text \nof the printing and typesetting \nindustry. Lorem Ipsum has been the \nindustry',
-    'Lorem Ipsum is simply dummy text \nof the printing and typesetting \nindustry. Lorem Ipsum has been the \nindustry',
+    'Smasher Connection Between Students and Companies\n An Unparalleled Experience',
+    'Online Assesment \n aimed to Save time and effort  \n of Companies',
+    'Online Training courses \n full of modern information and skill',
+    'Supercalifragilisticexpialidocious\n Virtual 3d Events',
   ];
   @override
   Widget build(BuildContext context) {
@@ -34,20 +34,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             if (isLast) {
-              Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  Login.id, (route) {
+              Navigator.pushNamedAndRemoveUntil(context, Login.id, (route) {
                 return false;
               });
             } else {
               boardController.nextPage(
-                  duration:const Duration(milliseconds: 600),
+                  duration: const Duration(milliseconds: 600),
                   // Here was the problem
-                  curve: Curves.easeInSine
-              );
+                  curve: Curves.easeInSine);
             }
           },
-          child:const Icon(
+          child: const Icon(
             Icons.arrow_forward_ios_rounded,
             size: 40,
             color: Colors.white,
@@ -60,7 +57,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             children: [
               PageView.builder(
                   controller: boardController,
-                  physics:const BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   itemCount: images.length,
                   onPageChanged: (int index) {
                     if (index == images.length - 1) {
@@ -82,22 +79,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           child: TextButton(
                             onPressed: () {
                               Navigator.pushNamedAndRemoveUntil(
-                                  context,
-                                  Login.id, (route) {
+                                  context, Login.id, (route) {
                                 return false;
                               });
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
-                              children:const [
-                                  Text(
+                              children: const [
+                                Text(
                                   'SKIP',
                                   style: TextStyle(color: Color(0xFF478d8b)),
                                 ),
                                 // SizedBox(
                                 //   width: 2,
                                 // ),
-                                 Icon(
+                                Icon(
                                   Icons.arrow_forward_ios_outlined,
                                   size: 12,
                                   color: Color(0xFF478d8b),
@@ -114,7 +110,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Transform.translate(
-                                  offset:const Offset(0, -30),
+                                  offset: const Offset(0, -30),
                                   child: Image(
                                     image: AssetImage(
                                       images[index],
@@ -122,12 +118,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     fit: BoxFit.cover,
                                   ),
                                 ),
-                                 const SizedBox(
+                                const SizedBox(
                                   height: 16,
                                 ),
                                 Text(
                                   stringOnBOrd[index],
-                                  style:  const TextStyle(color: Color(0xFF707070)),
+                                  style:
+                                      const TextStyle(color: Color(0xFF707070)),
                                   textAlign: TextAlign.center,
                                 ),
                                 SizedBox(
@@ -136,7 +133,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 SmoothPageIndicator(
                                   controller: boardController,
                                   count: images.length,
-                                  effect:const ScrollingDotsEffect(
+                                  effect: const ScrollingDotsEffect(
                                       dotColor: Colors.grey,
                                       dotWidth: 10,
                                       dotHeight: 10,

@@ -155,12 +155,12 @@ class _ResultState extends State<Result> {
 
   List<ExpenseData> getChartData() {
     final List<ExpenseData> chartData = [
-      ExpenseData('R', 17),
-      ExpenseData('I', 16),
-      ExpenseData('A', 13),
-      ExpenseData('S', 11),
-      ExpenseData('E', 13),
-      ExpenseData('C', 19),
+      ExpenseData('R', realisticResult),
+      ExpenseData('I', investigativeResult),
+      ExpenseData('A', artisticResult),
+      ExpenseData('S', socialResult),
+      ExpenseData('E', enterprisingResult),
+      ExpenseData('C', conventionalResult),
     ];
     return chartData;
   }
