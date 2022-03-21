@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
+import 'package:pharus/ui/screens/recommend_Career.dart';
 import 'package:pharus/ui/screens/results.dart';
 import 'package:pharus/ui/widgets/buttons.dart';
 
@@ -113,7 +114,8 @@ class _JobZoneScreenState extends State<JobZoneScreen> {
                       height: MediaQuery.of(context).size.height * 0.06,
                       child: buttons(Colors.white, bottom, 'Start Discovering',
                           () {
-                        Navigator.pushReplacementNamed(context, Result.id);
+                        Navigator.pushReplacementNamed(
+                            context, RecommendCareer.id);
                       })),
                 ),
               )
