@@ -7,3 +7,5 @@ const circle = Color(0xFFE3FDFC);
 const Color primaryColor = Color(0xFF478d8b);
 const Color greensColor = Color(0xFF478d8b);
 const Color questBackground = Color(0xffFFFFFF);
+const Color notActiveQuest =  Color(0xFF478d8b);
+const Color iconColor = Color(0xFF3B5352);

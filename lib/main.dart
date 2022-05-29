@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pharus/ui/screens/career_detail.dart';
 import 'package:pharus/ui/screens/courses/course_detail.dart';
+import 'package:pharus/ui/screens/profile_view.dart';
 import 'package:pharus/ui/screens/recommend_Career.dart';
 import 'package:pharus/ui/screens/results.dart';
 import 'package:pharus/ui/screens/splash_screen.dart';

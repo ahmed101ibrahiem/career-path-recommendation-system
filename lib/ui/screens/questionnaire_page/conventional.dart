@@ -1,9 +1,11 @@
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
+import 'package:pharus/constant/value_questionnaire.dart';
 import 'package:pharus/models_questionnaire/conventional_mode.dart';
 import 'package:pharus/ui/screens/results.dart';
 import 'package:pharus/ui/widgets/appbar_quest.dart';
+import 'package:pharus/ui/widgets/questionnaire_cart.dart';
 
 class Conventional extends StatefulWidget {
   const Conventional({Key key}) : super(key: key);
@@ -460,1232 +462,387 @@ class _ConventionalState extends State<Conventional> {
               right: 10,
               top: 16),
           children: [
-            Card(
-              //  margin: const EdgeInsets.all(10.0),
-              elevation: 4,
-              color: questBackground,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10, 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text('${_conventionalList[0]}'),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.02,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional = 1;
-                                  setState(() {
-                                    changColors1(1);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_angry,
-                                  size: 40,
-                                  color: face1_1,
-                                )),
-                            Text(
-                              '  Strongly\nAngry',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional = 2;
-                                  setState(() {
-                                    changColors1(2);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_sad,
-                                  size: 40,
-                                  color: face1_2,
-                                )),
-                            const Text('  dislike',
-                                textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional = 3;
-                                  setState(() {
-                                    changColors1(3);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_neutral,
-                                  size: 40,
-                                  color: face1_3,
-                                )),
-                            const Text('  Not Sure',
-                                textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional = 4;
-                                  setState(() {
-                                    changColors1(4);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_happy,
-                                  size: 40,
-                                  color: face1_4,
-                                )),
-                            Text('  Like', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional = 5;
-                                  setState(() {
-                                    changColors1(5);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_excited,
-                                  size: 40,
-                                  color: face1_5,
-                                )),
-                            Text('  Strongly\nLike',
-                                textAlign: TextAlign.center),
-                          ],
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+            QuestionaireCard(
+              textQuestion: _conventionalList[0],
+              face1: face1_1,
+              face2: face1_2,
+              face3: face1_3,
+              face4: face1_4,
+              face5: face1_5,
+              functionClick1: (){
+                totalConventional = ValueQue.v1;
+                setState(() {
+                  changColors1(1);
+                });
+              },
+              functionClick2: (){
+                totalConventional = ValueQue.v2;
+                setState(() {
+                  changColors1(2);
+                });
+              },
+              functionClick3: (){
+                totalConventional = ValueQue.v3;
+                setState(() {
+                  changColors1(3);
+                });
+              },
+              functionClick4: (){
+                totalConventional = ValueQue.v4;
+                setState(() {
+                  changColors1(4);
+                });
+              },
+              functionClick5: (){
+                totalConventional = ValueQue.v5;
+                setState(() {
+                  changColors1(5);
+                });
+              },
             ),
-            Card(
-              elevation: 4,
-              color: questBackground,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10, 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text('${_conventionalList[1]}'),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.02,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional1 = 1;
-                                  setState(() {
-                                    changColors2(1);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_angry,
-                                  size: 40,
-                                  color: face2_1,
-                                )),
-                            Text(
-                              '  Strongly\nAngry',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional1 = 2;
-                                  setState(() {
-                                    changColors2(2);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_sad,
-                                  size: 40,
-                                  color: face2_2,
-                                )),
-                            Text('  dislike', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional1 = 3;
-                                  setState(() {
-                                    changColors2(3);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_neutral,
-                                  size: 40,
-                                  color: face2_3,
-                                )),
-                            Text('  Not Sure', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional1 = 4;
-                                  setState(() {
-                                    changColors2(4);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_happy,
-                                  size: 40,
-                                  color: face2_4,
-                                )),
-                            Text('  Like', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional1 = 5;
-                                  setState(() {
-                                    changColors2(5);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_excited,
-                                  size: 40,
-                                  color: face2_5,
-                                )),
-                            Text('  Strongly\nLike',
-                                textAlign: TextAlign.center),
-                          ],
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+            QuestionaireCard(
+              textQuestion: _conventionalList[1],
+              face1: face2_1,
+              face2: face2_2,
+              face3: face2_3,
+              face4: face2_4,
+              face5: face2_5,
+              functionClick1: (){
+                totalConventional1 = ValueQue.v1;
+                setState(() {
+                  changColors2(1);
+                });
+              },
+              functionClick2: (){
+                totalConventional1 = ValueQue.v2;
+                setState(() {
+                  changColors2(2);
+                });
+              },
+              functionClick3: (){
+                totalConventional1 = ValueQue.v3;
+                setState(() {
+                  changColors2(3);
+                });
+              },
+              functionClick4: (){
+                totalConventional1 = ValueQue.v4;
+                setState(() {
+                  changColors2(4);
+                });
+              },
+              functionClick5: (){
+                totalConventional1 = ValueQue.v5;
+                setState(() {
+                  changColors2(5);
+                });
+              },
             ),
-            Card(
-              elevation: 4,
-              color: questBackground,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10, 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text('${_conventionalList[2]}'),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.02,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional2 = 1;
-                                  setState(() {
-                                    changColors3(1);
-                                  });
-                                },
-                                icon: Icon(
-                                    CommunityMaterialIcons.emoticon_angry,
-                                    size: 40,
-                                    color: face3_1)),
-                            Text(
-                              '  Strongly\nAngry',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional2 = 2;
-                                  setState(() {
-                                    changColors3(2);
-                                  });
-                                },
-                                icon: Icon(CommunityMaterialIcons.emoticon_sad,
-                                    size: 40, color: face3_2)),
-                            Text('  dislike', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional2 = 3;
-                                  setState(() {
-                                    changColors3(3);
-                                  });
-                                },
-                                icon: Icon(
-                                    CommunityMaterialIcons.emoticon_neutral,
-                                    size: 40,
-                                    color: face3_3)),
-                            Text('  Not Sure', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional2 = 4;
-                                  setState(() {
-                                    changColors3(4);
-                                  });
-                                },
-                                icon: Icon(
-                                    CommunityMaterialIcons.emoticon_happy,
-                                    size: 40,
-                                    color: face3_4)),
-                            Text('  Like', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional2 = 5;
-                                  setState(() {
-                                    changColors3(5);
-                                  });
-                                },
-                                icon: Icon(
-                                    CommunityMaterialIcons.emoticon_excited,
-                                    size: 40,
-                                    color: face3_5)),
-                            Text('  Strongly\nLike',
-                                textAlign: TextAlign.center),
-                          ],
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+            QuestionaireCard(
+              textQuestion: _conventionalList[2],
+              face1: face3_1,
+              face2: face3_2,
+              face3: face3_3,
+              face4: face3_4,
+              face5: face3_5,
+              functionClick1: (){
+                totalConventional2 = ValueQue.v1;
+                setState(() {
+                  changColors3(1);
+                });
+              },
+              functionClick2: (){
+                totalConventional2 = ValueQue.v2;
+                setState(() {
+                  changColors3(2);
+                });
+              },
+              functionClick3: (){
+                totalConventional2 = ValueQue.v3;
+                setState(() {
+                  changColors3(3);
+                });
+              },
+              functionClick4: (){
+                totalConventional2 = ValueQue.v4;
+                setState(() {
+                  changColors3(4);
+                });
+              },
+              functionClick5: (){
+                totalConventional2 = ValueQue.v5;
+                setState(() {
+                  changColors3(5);
+                });
+              },
             ),
-            Card(
-              elevation: 4,
-              color: questBackground,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10, 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text('${_conventionalList[3]}'),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.02,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional3 = 1;
-                                  setState(() {
-                                    changColors4(1);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_angry,
-                                  size: 40,
-                                  color: face4_1,
-                                )),
-                            Text(
-                              '  Strongly\nAngry',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional3 = 2;
-                                  setState(() {
-                                    changColors4(2);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_sad,
-                                  size: 40,
-                                  color: face4_2,
-                                )),
-                            Text('  dislike', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional3 = 3;
-                                  setState(() {
-                                    changColors4(3);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_neutral,
-                                  size: 40,
-                                  color: face4_3,
-                                )),
-                            Text('  Not Sure', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional3 = 4;
-                                  setState(() {
-                                    changColors4(4);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_happy,
-                                  size: 40,
-                                  color: face4_4,
-                                )),
-                            Text('  Like', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional3 = 5;
-                                  setState(() {
-                                    changColors4(5);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_excited,
-                                  size: 40,
-                                  color: face4_5,
-                                )),
-                            Text('  Strongly\nLike',
-                                textAlign: TextAlign.center),
-                          ],
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+            QuestionaireCard(
+              textQuestion: _conventionalList[3],
+              face1: face4_1,
+              face2: face4_2,
+              face3: face4_3,
+              face4: face4_4,
+              face5: face4_5,
+              functionClick1: (){
+                totalConventional3 = ValueQue.v1;
+                setState(() {
+                  changColors4(1);
+                });
+              },
+              functionClick2: (){
+                totalConventional3 = ValueQue.v2;
+                setState(() {
+                  changColors4(2);
+                });
+              },
+              functionClick3: (){
+                totalConventional3 = ValueQue.v3;
+                setState(() {
+                  changColors4(3);
+                });
+              },
+              functionClick4: (){
+                totalConventional3 = ValueQue.v4;
+                setState(() {
+                  changColors4(4);
+                });
+              },
+              functionClick5: (){
+                totalConventional3 = ValueQue.v5;
+                setState(() {
+                  changColors4(5);
+                });
+              },
             ),
-            Card(
-              elevation: 4,
-              color: questBackground,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10, 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text('${_conventionalList[4]}'),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.02,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional4 = 1;
-                                  setState(() {
-                                    changColors5(1);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_angry,
-                                  size: 40,
-                                  color: face5_1,
-                                )),
-                            Text(
-                              '  Strongly\nAngry',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional4 = 2;
-                                  setState(() {
-                                    changColors5(2);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_sad,
-                                  size: 40,
-                                  color: face5_2,
-                                )),
-                            Text('  dislike', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional4 = 3;
-                                  setState(() {
-                                    changColors5(3);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_neutral,
-                                  size: 40,
-                                  color: face5_3,
-                                )),
-                            Text('  Not Sure', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional4 = 4;
-                                  setState(() {
-                                    changColors5(4);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_happy,
-                                  size: 40,
-                                  color: face5_4,
-                                )),
-                            Text('  Like', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional4 = 5;
-                                  setState(() {
-                                    changColors5(5);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_excited,
-                                  size: 40,
-                                  color: face5_5,
-                                )),
-                            Text('  Strongly\nLike',
-                                textAlign: TextAlign.center),
-                          ],
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+            QuestionaireCard(
+              textQuestion: _conventionalList[4],
+              face1: face5_1,
+              face2: face5_2,
+              face3: face5_3,
+              face4: face5_4,
+              face5: face5_5,
+              functionClick1: (){
+                totalConventional4 = ValueQue.v1;
+                setState(() {
+                  changColors5(1);
+                });
+              },
+              functionClick2: (){
+                totalConventional4 = ValueQue.v2;
+                setState(() {
+                  changColors5(2);
+                });
+              },
+              functionClick3: (){
+                totalConventional4 = ValueQue.v3;
+                setState(() {
+                  changColors5(3);
+                });
+              },
+              functionClick4: (){
+                totalConventional4 = ValueQue.v4;
+                setState(() {
+                  changColors5(4);
+                });
+              },
+              functionClick5: (){
+                totalConventional4 = ValueQue.v5;
+                setState(() {
+                  changColors5(5);
+                });
+              },
             ),
-            Card(
-              elevation: 4,
-              color: questBackground,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10, 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text('${_conventionalList[5]}'),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.02,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional5 = 1;
-                                  setState(() {
-                                    changColors6(1);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_angry,
-                                  size: 40,
-                                  color: face6_1,
-                                )),
-                            Text(
-                              '  Strongly\nAngry',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional5 = 2;
-                                  setState(() {
-                                    changColors6(2);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_sad,
-                                  size: 40,
-                                  color: face6_2,
-                                )),
-                            Text('  dislike', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional5 = 3;
-                                  setState(() {
-                                    changColors6(3);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_neutral,
-                                  size: 40,
-                                  color: face6_3,
-                                )),
-                            Text('  Not Sure', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional5 = 4;
-                                  setState(() {
-                                    changColors6(4);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_happy,
-                                  size: 40,
-                                  color: face6_4,
-                                )),
-                            Text('  Like', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional5 = 5;
-                                  setState(() {
-                                    changColors6(5);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_excited,
-                                  size: 40,
-                                  color: face6_5,
-                                )),
-                            Text('  Strongly\nLike',
-                                textAlign: TextAlign.center),
-                          ],
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+            QuestionaireCard(
+              textQuestion: _conventionalList[5],
+              face1: face6_1,
+              face2: face6_2,
+              face3: face6_3,
+              face4: face6_4,
+              face5: face6_5,
+              functionClick1: (){
+                totalConventional5 = ValueQue.v1;
+                setState(() {
+                  changColors6(1);
+                });
+              },
+              functionClick2: (){
+                totalConventional5 = ValueQue.v2;
+                setState(() {
+                  changColors6(2);
+                });
+              },
+              functionClick3: (){
+                totalConventional5 = ValueQue.v3;
+                setState(() {
+                  changColors6(3);
+                });
+              },
+              functionClick4: (){
+                totalConventional5 = ValueQue.v4;
+                setState(() {
+                  changColors6(4);
+                });
+              },
+              functionClick5: (){
+                totalConventional5 = ValueQue.v5;
+                setState(() {
+                  changColors6(5);
+                });
+              },
             ),
-            Card(
-              elevation: 4,
-              color: questBackground,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10, 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text('${_conventionalList[6]}'),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.02,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional6 = 1;
-                                  setState(() {
-                                    changColors7(1);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_angry,
-                                  size: 40,
-                                  color: face7_1,
-                                )),
-                            Text(
-                              '  Strongly\nAngry',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional6 = 2;
-                                  setState(() {
-                                    changColors7(2);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_sad,
-                                  size: 40,
-                                  color: face7_2,
-                                )),
-                            Text('  dislike', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional6 = 3;
-                                  setState(() {
-                                    changColors7(3);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_neutral,
-                                  size: 40,
-                                  color: face7_3,
-                                )),
-                            Text('  Not Sure', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional6 = 4;
-                                  setState(() {
-                                    changColors7(4);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_happy,
-                                  size: 40,
-                                  color: face7_4,
-                                )),
-                            Text('  Like', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional6 = 5;
-                                  setState(() {
-                                    changColors7(5);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_excited,
-                                  size: 40,
-                                  color: face7_5,
-                                )),
-                            Text('  Strongly\nLike',
-                                textAlign: TextAlign.center),
-                          ],
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+            QuestionaireCard(
+              textQuestion: _conventionalList[6],
+              face1: face7_1,
+              face2: face7_2,
+              face3: face7_3,
+              face4: face7_4,
+              face5: face7_5,
+              functionClick1: (){
+                totalConventional6 = ValueQue.v1;
+                setState(() {
+                  changColors7(1);
+                });
+              },
+              functionClick2: (){
+                totalConventional6 = ValueQue.v2;
+                setState(() {
+                  changColors7(2);
+                });
+              },
+              functionClick3: (){
+                totalConventional6 = ValueQue.v3;
+                setState(() {
+                  changColors7(3);
+                });
+              },
+              functionClick4: (){
+                totalConventional6 = ValueQue.v4;
+                setState(() {
+                  changColors7(4);
+                });
+              },
+              functionClick5: (){
+                totalConventional6 = ValueQue.v5;
+                setState(() {
+                  changColors7(5);
+                });
+              },
             ),
-            Card(
-              elevation: 4,
-              color: questBackground,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10, 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text('${_conventionalList[7]}'),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.02,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional7 = 1;
-                                  setState(() {
-                                    changColors8(1);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_angry,
-                                  size: 40,
-                                  color: face8_1,
-                                )),
-                            Text(
-                              '  Strongly\nAngry',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional7 = 2;
-                                  setState(() {
-                                    changColors8(2);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_sad,
-                                  size: 40,
-                                  color: face8_2,
-                                )),
-                            Text('  dislike', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional7 = 3;
-                                  setState(() {
-                                    changColors8(3);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_neutral,
-                                  size: 40,
-                                  color: face8_3,
-                                )),
-                            Text('  Not Sure', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional7 = 4;
-                                  setState(() {
-                                    changColors8(4);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_happy,
-                                  size: 40,
-                                  color: face8_4,
-                                )),
-                            Text('  Like', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional7 = 5;
-                                  setState(() {
-                                    changColors8(5);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_excited,
-                                  size: 40,
-                                  color: face8_5,
-                                )),
-                            Text('  Strongly\nLike',
-                                textAlign: TextAlign.center),
-                          ],
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+            QuestionaireCard(
+              textQuestion: _conventionalList[7],
+              face1: face8_1,
+              face2: face8_2,
+              face3: face8_3,
+              face4: face8_4,
+              face5: face8_5,
+              functionClick1: (){
+                totalConventional7 = ValueQue.v1;
+                setState(() {
+                  changColors8(1);
+                });
+              },
+              functionClick2: (){
+                totalConventional7 = ValueQue.v2;
+                setState(() {
+                  changColors8(2);
+                });
+              },
+              functionClick3: (){
+                totalConventional7 = ValueQue.v3;
+                setState(() {
+                  changColors8(3);
+                });
+              },
+              functionClick4: (){
+                totalConventional7 = ValueQue.v4;
+                setState(() {
+                  changColors8(4);
+                });
+              },
+              functionClick5: (){
+                totalConventional7 = ValueQue.v5;
+                setState(() {
+                  changColors8(5);
+                });
+              },
             ),
-            Card(
-              elevation: 4,
-              color: questBackground,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10, 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text('${_conventionalList[8]}'),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.02,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional8 = 1;
-                                  setState(() {
-                                    changColors9(1);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_angry,
-                                  size: 40,
-                                  color: face9_1,
-                                )),
-                            Text(
-                              '  Strongly\nAngry',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional8 = 2;
-                                  setState(() {
-                                    changColors9(2);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_sad,
-                                  size: 40,
-                                  color: face9_2,
-                                )),
-                            Text('  dislike', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional8 = 3;
-                                  setState(() {
-                                    changColors9(3);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_neutral,
-                                  size: 40,
-                                  color: face9_3,
-                                )),
-                            Text('  Not Sure', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional8 = 4;
-                                  setState(() {
-                                    changColors9(4);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_happy,
-                                  size: 40,
-                                  color: face9_4,
-                                )),
-                            Text('  Like', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional8 = 5;
-                                  setState(() {
-                                    changColors9(5);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_excited,
-                                  size: 40,
-                                  color: face9_5,
-                                )),
-                            Text('  Strongly\nLike',
-                                textAlign: TextAlign.center),
-                          ],
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+            QuestionaireCard(
+              textQuestion: _conventionalList[8],
+              face1: face9_1,
+              face2: face9_2,
+              face3: face9_3,
+              face4: face9_4,
+              face5: face9_5,
+              functionClick1: (){
+                totalConventional8 = ValueQue.v1;
+                setState(() {
+                  changColors9(1);
+                });
+              },
+              functionClick2: (){
+                totalConventional8 = ValueQue.v2;
+                setState(() {
+                  changColors9(2);
+                });
+              },
+              functionClick3: (){
+                totalConventional8 = ValueQue.v3;
+                setState(() {
+                  changColors9(3);
+                });
+              },
+              functionClick4: (){
+                totalConventional8 = ValueQue.v4;
+                setState(() {
+                  changColors9(4);
+                });
+              },
+              functionClick5: (){
+                totalConventional8 = ValueQue.v5;
+                setState(() {
+                  changColors9(5);
+                });
+              },
             ),
-            Card(
-              elevation: 4,
-              color: questBackground,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10, 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text('${_conventionalList[9]}'),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.02,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional9 = 1;
-                                  setState(() {
-                                    changColors10(1);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_angry,
-                                  size: 40,
-                                  color: face10_1,
-                                )),
-                            Text(
-                              '  Strongly\nAngry',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional9 = 2;
-                                  setState(() {
-                                    changColors10(2);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_sad,
-                                  size: 40,
-                                  color: face10_2,
-                                )),
-                            Text('  dislike', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional9 = 3;
-                                  setState(() {
-                                    changColors10(3);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_neutral,
-                                  size: 40,
-                                  color: face10_3,
-                                )),
-                            Text('  Not Sure', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional9 = 4;
-                                  setState(() {
-                                    changColors10(4);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_happy,
-                                  size: 40,
-                                  color: face10_4,
-                                )),
-                            Text('  Like', textAlign: TextAlign.center),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {
-                                  totalConventional9 = 5;
-                                  setState(() {
-                                    changColors10(5);
-                                  });
-                                },
-                                icon: Icon(
-                                  CommunityMaterialIcons.emoticon_excited,
-                                  size: 40,
-                                  color: face10_5,
-                                )),
-                            Text('  Strongly\nLike',
-                                textAlign: TextAlign.center),
-                          ],
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+            QuestionaireCard(
+              textQuestion: _conventionalList[9],
+              face1: face10_1,
+              face2: face10_2,
+              face3: face10_3,
+              face4: face10_4,
+              face5: face10_5,
+              functionClick1: (){
+                totalConventional9 = ValueQue.v1;
+                setState(() {
+                  changColors10(1);
+                });
+              },
+              functionClick2: (){
+                totalConventional9 = ValueQue.v2;
+                setState(() {
+                  changColors10(2);
+                });
+              },
+              functionClick3: (){
+                totalConventional9 = ValueQue.v3;
+                setState(() {
+                  changColors10(3);
+                });
+              },
+              functionClick4: (){
+                totalConventional9 = ValueQue.v4;
+                setState(() {
+                  changColors10(4);
+                });
+              },
+              functionClick5: (){
+                totalConventional9 = ValueQue.v5;
+                setState(() {
+                  changColors10(5);
+                });
+              },
             ),
+
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
