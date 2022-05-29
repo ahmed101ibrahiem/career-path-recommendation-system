@@ -16,7 +16,7 @@ class _RecommendCareerState extends State<RecommendCareer> {
     'Agricultural Inspectors',
     'Bicycle Repairers',
     'Carpenters',
-    'Biomass Plant Technicians'
+    'Biomass Plant Technicians',
   ];
   List subtitle = [
     'Inspect agricultural commodities,processing equipment,and facilities,to ensure compliance with regulations and laws governing health,quality,and safety'
@@ -39,7 +39,7 @@ class _RecommendCareerState extends State<RecommendCareer> {
             ),
             Expanded(
               child: ListView.builder(
-                  itemCount: 4,
+                  itemCount: title.length,
                   itemBuilder: (context, index) {
                     return CardData(
                         index: (index + 1).toString(),

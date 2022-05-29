@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
+import 'package:pharus/ui/screens/courses/CoursesNames.dart';
 import 'package:pharus/ui/widgets/buttons.dart';
 
 class CareerDetails extends StatefulWidget {
@@ -97,8 +98,11 @@ class _CareerDetailsState extends State<CareerDetails> {
               SizedBox(height: 15),
               buttons(Colors.white, bottom, 'View Jobs In This field ', () {}),
               SizedBox(height: 10),
-              buttons(
-                  bottom, Colors.white, 'View Courses In This field ', () {}),
+              buttons(bottom, Colors.white, 'View Courses In This field ', () {
+                setState(() {
+                  Navigator.pushNamed(context, CoursesNames.id);
+                });
+              }),
             ],
           ),
         ),

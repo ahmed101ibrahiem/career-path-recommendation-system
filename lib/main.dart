@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pharus/ui/screens/career_detail.dart';
+import 'package:pharus/ui/screens/courses/course_detail.dart';
 import 'package:pharus/ui/screens/recommend_Career.dart';
 import 'package:pharus/ui/screens/results.dart';
 import 'package:pharus/ui/screens/splash_screen.dart';
 import 'package:pharus/ui/screens/success2.dart';
+import 'ui/screens/courses/CoursesNames.dart';
 import 'ui/screens/job_zone_screen.dart';
 import 'ui/screens/login.dart';
 import 'ui/screens/onboard.dart';
@@ -38,6 +40,8 @@ class MyApp extends StatelessWidget {
           Realistic.id: (context) => Realistic(),
           JobZoneScreen.id: (context) => JobZoneScreen(),
           CareerDetails.id: (context) => CareerDetails(),
+          CoursesNames.id: (context) => CoursesNames(),
+          courseDetail.id: (context) => courseDetail(),
         });
   }
 }

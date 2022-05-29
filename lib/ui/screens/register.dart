@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
 import 'package:pharus/ui/widgets/DropDownField.dart';
@@ -65,9 +64,15 @@ class _RegisterState extends State<Register> {
                 data: ['', ''],
                 showIcon: false,
                 labelText: 'Faculty',
+                width: MediaQuery.of(context).size.width * .93,
               ),
               const SizedBox(height: 15),
-              DropDownField(data: ['', ''], showIcon: false, labelText: 'City'),
+              DropDownField(
+                data: ['', ''],
+                showIcon: false,
+                labelText: 'City',
+                width: MediaQuery.of(context).size.width * .93,
+              ),
               const SizedBox(height: 25),
               // Text(
               //   'Graduated:',

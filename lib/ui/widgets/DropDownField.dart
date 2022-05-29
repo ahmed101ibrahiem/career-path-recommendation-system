@@ -7,14 +7,14 @@ class DropDownField extends StatelessWidget {
     @required this.data,
     @required this.showIcon,
     @required this.labelText,
+    @required this.width,
     // @required this.controller
   });
   List<String> data;
   bool showIcon;
   DropdownEditingController controller;
-  String
-      // text,
-      labelText;
+  String labelText;
+  double width;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -24,7 +24,7 @@ class DropDownField extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(35)),
           ),
-          width: MediaQuery.of(context).size.width * .93,
+          width: width,
           child: TextDropdownFormField(
             //controller: controller,
             options: data,
