@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pharus/constant/colors.dart';
 import 'package:pharus/ui/screens/career_detail.dart';
 import 'package:pharus/ui/screens/courses/course_detail.dart';
 import 'package:pharus/ui/screens/profile_view.dart';
@@ -27,6 +28,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.teal,
+          drawerTheme: DrawerThemeData(
+            backgroundColor: Colors.redAccent
+          )
         ),
         home: SplashScreens(),
         routes: {
