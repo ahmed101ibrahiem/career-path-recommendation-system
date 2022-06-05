@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
 
 class DropDownField extends StatelessWidget {
-  DropDownField({
-    @required this.data,
-    @required this.showIcon,
-    @required this.labelText,
-    @required this.width,
-    // @required this.controller
-  });
+  DropDownField(
+      {@required this.data,
+      @required this.showIcon,
+      @required this.labelText,
+      @required this.width,
+      @required this.controller});
   List<String> data;
   bool showIcon;
   DropdownEditingController controller;
@@ -26,7 +25,7 @@ class DropDownField extends StatelessWidget {
           ),
           width: width,
           child: TextDropdownFormField(
-            //controller: controller,
+            controller: controller,
             options: data,
             decoration: InputDecoration(
               border: OutlineInputBorder(
