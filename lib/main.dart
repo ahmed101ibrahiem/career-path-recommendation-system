@@ -37,6 +37,9 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primarySwatch: Colors.teal,
+            // drawerTheme: DrawerThemeData(
+            //   backgroundColor: Colors.redAccent
+            // )
           ),
           home: SplashScreens(),
           routes: {

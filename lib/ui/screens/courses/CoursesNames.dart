@@ -1,3 +1,4 @@
+import 'package:community_material_icon/community_material_icon.dart';
 import 'package:dropdown_plus/dropdown_plus.dart';
 import 'package:pharus/ui/screens/courses/course_detail.dart';
 import 'package:flutter/cupertino.dart';
@@ -5,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
 import 'package:pharus/ui/screens/register.dart';
 import 'package:pharus/ui/widgets/DropDownField.dart';
+import 'package:pharus/ui/widgets/custome_drawer.dart';
+import 'package:pharus/ui/widgets/list_tile_drawer.dart';
 
 class CoursesNames extends StatefulWidget {
   static const id = "CoursesNames";
@@ -29,7 +32,22 @@ class _CoursesNamesState extends State<CoursesNames> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFF5F5F5),
       appBar: AppBar(
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                CommunityMaterialIcons.sort_reverse_variant,
+                color: primaryColor,
+                size: 40,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
+        ),
         elevation: 0,
         backgroundColor: Colors.white12,
         actions: [
@@ -47,6 +65,7 @@ class _CoursesNamesState extends State<CoursesNames> {
               ))
         ],
       ),
+      drawer:  CustomDrawer(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -110,7 +129,10 @@ class _CoursesNamesState extends State<CoursesNames> {
       ),
     );
   }
+
+
 }
+
 
 class CardData extends StatelessWidget {
   CardData(
