@@ -38,6 +38,7 @@ class _ResultState extends State<Result> {
   int enterprisingResult = EnterprisingModel.resultEnterprising();
 
   int conventionalResult = ConventionalModel.resultConventional();
+  String finalResult = '';
 
   @override
   Widget build(BuildContext context) {
@@ -94,45 +95,47 @@ class _ResultState extends State<Result> {
               ),
               Container(
                 child: text('Realistic', '${realisticResult}'),
-                color:
-                    retrieve(result[0], result[1], result[2], realisticResult),
+                color: retrieve(
+                    result[0], result[1], result[2], realisticResult, 'R'),
                 height: 50,
                 width: double.infinity,
               ),
               Container(
                 child: text('Investigative', '${investigativeResult}'),
                 color: retrieve(
-                    result[0], result[1], result[2], investigativeResult),
+                    result[0], result[1], result[2], investigativeResult, 'I'),
                 height: 50,
               ),
               Container(
                   child: text('Artistic', '${artisticResult}'),
                   height: 50,
                   color: retrieve(
-                      result[0], result[1], result[2], artisticResult)),
+                      result[0], result[1], result[2], artisticResult, 'A')),
               Container(
                   child: text('Social', '${socialResult}'),
                   height: 50,
-                  color:
-                      retrieve(result[0], result[1], result[2], socialResult)),
+                  color: retrieve(
+                      result[0], result[1], result[2], socialResult, 'S')),
               Container(
                   child: text('Enterprising', '${enterprisingResult}'),
                   height: 50,
-                  color: retrieve(
-                      result[0], result[1], result[2], enterprisingResult)),
+                  color: retrieve(result[0], result[1], result[2],
+                      enterprisingResult, 'E')),
               Container(
                 child: text('Conventional', '${conventionalResult}'),
                 color: retrieve(
-                    result[0], result[1], result[2], conventionalResult),
+                    result[0], result[1], result[2], conventionalResult, 'C'),
                 height: 50,
               ),
               const SizedBox(
                 height: 20,
               ),
               buttons(Colors.white, bottom, 'NEXT !', () {
-                setState(() {
-                  Navigator.pushNamed(context, RecommendCareer.id);
-                });
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => JobZoneScreen(finalResult)),
+                );
               }),
               const SizedBox(
                 height: 20,
@@ -161,6 +164,14 @@ class _ResultState extends State<Result> {
         )
       ],
     );
+  }
+
+  Color retrieve(int x, int y, int z, int mainNum, String type) {
+    if (mainNum == x || mainNum == y || mainNum == z) {
+      finalResult = finalResult + type;
+    }
+
+    return (mainNum == x || mainNum == y || mainNum == z) ? circle : null;
   }
 
   List<ExpenseData> getChartData() {
@@ -194,8 +205,4 @@ class ExpenseData {
 
   final String expenseCategory;
   final num result;
-}
-
-Color retrieve(int x, int y, int z, int mainNum) {
-  return (mainNum == x || mainNum == y || mainNum == z) ? circle : null;
 }

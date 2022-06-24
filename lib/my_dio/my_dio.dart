@@ -14,8 +14,8 @@ class MyDio {
       //   "Content-Type": "application/json",
       // };
 
-      final respose = await dio.post(path, data: myModel);
-      return ResponseModel(error: false, data: respose);
+      final response = await dio.post(path, data: myModel);
+      return ResponseModel(error: false, data: response);
     } on DioError catch (e) {
       if (e.type == DioErrorType.other) {
         return ResponseModel(
@@ -32,6 +32,34 @@ class MyDio {
       );
     } on SocketException catch (e) {
       return ResponseModel(error: true, errorMessage: "No Internet Connection");
+    }
+  }
+
+  static Future<ResponseModel> getData(String path, {myModel}) async {
+    try {
+      // dio.options.headers = {
+      //   "Content-Type": "application/json",
+      // };
+      final response = await dio.get(path);
+      return ResponseModel(error: false, data: response);
+    } on DioError catch (e) {
+      if (e.type == DioErrorType.other) {
+        return ResponseModel(
+          error: true,
+          errorMessage: "Weak Internet Connection",
+        );
+      }
+      print(e.response.data);
+
+      return ResponseModel(
+        error: true,
+        errorMessage: e.response.data["detail"],
+      );
+    } on SocketException catch (e) {
+      return ResponseModel(
+        error: true,
+        errorMessage: "No Internet Connection",
+      );
     }
   }
 }

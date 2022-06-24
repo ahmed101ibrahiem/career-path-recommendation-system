@@ -7,7 +7,8 @@ import 'package:pharus/ui/widgets/buttons.dart';
 
 class JobZoneScreen extends StatefulWidget {
   static const id = 'JobZoneScreen';
-
+  String code;
+  JobZoneScreen(this.code);
   @override
   _JobZoneScreenState createState() => _JobZoneScreenState();
 }
@@ -114,8 +115,12 @@ class _JobZoneScreenState extends State<JobZoneScreen> {
                       height: MediaQuery.of(context).size.height * 0.06,
                       child: buttons(Colors.white, bottom, 'Start Discovering',
                           () {
-                        Navigator.pushReplacementNamed(
-                            context, RecommendCareer.id);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  RecommendCareer(widget.code, chooseFuelType)),
+                        );
                       })),
                 ),
               )

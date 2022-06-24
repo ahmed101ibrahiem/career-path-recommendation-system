@@ -9,6 +9,7 @@ import 'package:pharus/ui/screens/results.dart';
 import 'package:pharus/ui/screens/splash_screen.dart';
 import 'package:pharus/ui/screens/success2.dart';
 import 'package:provider/provider.dart';
+import 'controllers/career_controller.dart';
 import 'ui/screens/courses/CoursesNames.dart';
 import 'ui/screens/job_zone_screen.dart';
 import 'ui/screens/login.dart';
@@ -31,7 +32,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: ((context) => AuthController()))
+        ChangeNotifierProvider(
+          create: ((context) => AuthController()),
+        ),
+        ChangeNotifierProvider(
+          create: ((context) => CareerController()),
+        ),
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -50,9 +56,9 @@ class MyApp extends StatelessWidget {
             OnboardingScreen.id: (context) => OnboardingScreen(),
             SplashScreens.id: (context) => SplashScreens(),
             Result.id: (context) => Result(),
-            RecommendCareer.id: (context) => RecommendCareer(),
+            // RecommendCareer.id: (context) => RecommendCareer(),
             Realistic.id: (context) => Realistic(),
-            JobZoneScreen.id: (context) => JobZoneScreen(),
+            // JobZoneScreen.id: (context) => JobZoneScreen(),
             CareerDetails.id: (context) => CareerDetails(),
             CoursesNames.id: (context) => CoursesNames(),
             courseDetail.id: (context) => courseDetail(),

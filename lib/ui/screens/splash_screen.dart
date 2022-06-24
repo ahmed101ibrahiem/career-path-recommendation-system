@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:pharus/constant/colors.dart';
 import 'package:pharus/controllers/auth_controller.dart';
-import 'package:pharus/ui/screens/login.dart';
+import 'package:pharus/ui/screens/job_zone_screen.dart';
+import 'package:pharus/ui/screens/questionnaire_page/realistic.dart';
+import 'package:pharus/ui/screens/recommend_Career.dart';
 import 'package:pharus/ui/screens/success.dart';
 import 'package:provider/provider.dart';
-import 'package:splashscreen/splashscreen.dart';
 import 'onboard.dart';
 
 class SplashScreens extends StatefulWidget {
@@ -18,14 +18,19 @@ class SplashScreens extends StatefulWidget {
 }
 
 class _SplashScreensState extends State<SplashScreens> {
+  String finalResult = '';
+
   @override
   void initState() {
     // TODO: implement initState
 
     Timer(const Duration(seconds: 3), () async {
       await Provider.of<AuthController>(context, listen: false).checkLogin()
-          ? Navigator.pushReplacementNamed(context, Success.id)
-          : Navigator.pushReplacementNamed(context, Login.id);
+          ? Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => JobZoneScreen(finalResult)))
+          : Navigator.pushReplacementNamed(context, OnboardingScreen.id);
     });
     super.initState();
   }

@@ -1,11 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
+import 'package:pharus/controllers/career_controller.dart';
 import 'package:pharus/ui/screens/career_detail.dart';
 import 'package:pharus/ui/screens/results.dart';
+import 'package:provider/provider.dart';
 
 class RecommendCareer extends StatefulWidget {
   static const id = 'RecommendCareer';
+  String code;
+  String area;
+  RecommendCareer(this.code, this.area);
 
   @override
   _RecommendCareerState createState() => _RecommendCareerState();
@@ -22,35 +27,61 @@ class _RecommendCareerState extends State<RecommendCareer> {
     'Inspect agricultural commodities,processing equipment,and facilities,to ensure compliance with regulations and laws governing health,quality,and safety'
   ];
   @override
+  void initState() {
+    // TODO: implement initState
+    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) async {
+      final provider = Provider.of<CareerController>(context, listen: false);
+      provider.getUserCareer(widget.code, int.parse(widget.area), context);
+    });
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.all(20),
-              child: Text(
-                  "Careers that fit your interests and perparation level:",
-                  style: TextStyle(
-                      color: Colors.grey.shade600,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400)),
-            ),
-            Expanded(
-              child: ListView.builder(
-                  itemCount: title.length,
-                  itemBuilder: (context, index) {
-                    return CardData(
-                        index: (index + 1).toString(),
-                        title: title[index],
-                        subtitle: subtitle[0]);
-                  }),
-            ),
-          ],
+    return Consumer<CareerController>(builder: (context, value, child) {
+      if (value.statusUser == StatusCareer.loading) {
+        return Scaffold(
+          body: Center(
+            child: CircularProgressIndicator(),
+          ),
+        );
+      }
+      if (value.statusUser == StatusCareer.error) {
+        return Scaffold(
+          body: Center(
+            child: Text('Error in data'),
+          ),
+        );
+      }
+
+      return Scaffold(
+        body: SafeArea(
+          child: Column(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(20),
+                child: Text(
+                    "Careers that fit your interests and perparation level:",
+                    style: TextStyle(
+                        color: Colors.grey.shade600,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400)),
+              ),
+              Expanded(
+                child: ListView.builder(
+                    itemCount: value.career.length,
+                    itemBuilder: (context, index) {
+                      return CardData(
+                          index: (index + 1).toString(),
+                          title: value.career[index].title,
+                          subtitle: value.career[index].description);
+                    }),
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
 
