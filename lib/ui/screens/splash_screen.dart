@@ -26,10 +26,7 @@ class _SplashScreensState extends State<SplashScreens> {
 
     Timer(const Duration(seconds: 3), () async {
       await Provider.of<AuthController>(context, listen: false).checkLogin()
-          ? Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => JobZoneScreen(finalResult)))
+          ? Navigator.pushReplacementNamed(context, Realistic.id)
           : Navigator.pushReplacementNamed(context, OnboardingScreen.id);
     });
     super.initState();

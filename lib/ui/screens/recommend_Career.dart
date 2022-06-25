@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
 import 'package:pharus/controllers/career_controller.dart';
+import 'package:pharus/models/career_model.dart';
 import 'package:pharus/ui/screens/career_detail.dart';
 import 'package:pharus/ui/screens/results.dart';
 import 'package:provider/provider.dart';
@@ -17,21 +18,12 @@ class RecommendCareer extends StatefulWidget {
 }
 
 class _RecommendCareerState extends State<RecommendCareer> {
-  List title = [
-    'Agricultural Inspectors',
-    'Bicycle Repairers',
-    'Carpenters',
-    'Biomass Plant Technicians',
-  ];
-  List subtitle = [
-    'Inspect agricultural commodities,processing equipment,and facilities,to ensure compliance with regulations and laws governing health,quality,and safety'
-  ];
   @override
   void initState() {
     // TODO: implement initState
     WidgetsBinding.instance?.addPostFrameCallback((timeStamp) async {
       final provider = Provider.of<CareerController>(context, listen: false);
-      provider.getUserCareer(widget.code, int.parse(widget.area), context);
+      provider.getUserCareer(widget.code, widget.area, context);
     });
     super.initState();
   }
@@ -72,6 +64,7 @@ class _RecommendCareerState extends State<RecommendCareer> {
                     itemCount: value.career.length,
                     itemBuilder: (context, index) {
                       return CardData(
+                          career: value.career[index],
                           index: (index + 1).toString(),
                           title: value.career[index].title,
                           subtitle: value.career[index].description);
@@ -87,10 +80,14 @@ class _RecommendCareerState extends State<RecommendCareer> {
 
 class CardData extends StatelessWidget {
   CardData(
-      {@required this.index, @required this.title, @required this.subtitle});
+      {@required this.index,
+      @required this.title,
+      @required this.subtitle,
+      @required this.career});
   String index;
   String title;
   String subtitle;
+  CareerModel career;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -98,7 +95,11 @@ class CardData extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(15),
         onTap: () {
-          Navigator.pushNamed(context, CareerDetails.id);
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      CareerDetails(career: career, index: index)));
         },
         child: Card(
           shape: RoundedRectangleBorder(
