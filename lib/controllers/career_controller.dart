@@ -13,8 +13,8 @@ class CareerController extends ChangeNotifier {
     statusUser = StatusCareer.loading;
     career = [];
     notifyListeners();
-    print(code);
-    print(area);
+    // print(code);
+    // print(area);
 
     final response = await MyDio.getData('career/$code,$area');
     if (response.error == false) {

@@ -32,13 +32,15 @@ class _CareerDetailsState extends State<CareerDetails> {
                       child: Text(widget.index),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(8, 10, 8, 8),
-                    child: Text(widget.career.title,
-                        style: TextStyle(
-                            color: Colors.teal,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold)),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(8, 10, 8, 8),
+                      child: Text(widget.career.title,
+                          style: TextStyle(
+                              color: Colors.teal,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold)),
+                    ),
                   )
                 ],
               ),
