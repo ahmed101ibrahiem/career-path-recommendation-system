@@ -10,17 +10,6 @@ class ArtistiModel {
  static int artistic9;
  static int artistic10;
 
-  // ArtistiModel(
-  //     {this.artistic1,
-  //       this.artistic2,
-  //       this.artistic3,
-  //       this.artistic4,
-  //       this.artistic5,
-  //       this.artistic6,
-  //       this.artistic7,
-  //       this.artistic8,
-  //       this.artistic9,
-  //       this.artistic10});
 
   static int resultArtistic() {
     int result;

@@ -1,3 +1,4 @@
+
 class UserModel {
   //int id;
   String firstName;
@@ -11,14 +12,9 @@ class UserModel {
 
   UserModel(
       { //this.id,
-      this.firstName,
-      this.lastName,
-      this.email,
-      this.username,
-      this.faculty,
-      this.city,
-      this.password,
-      this.graduated});
+      this.firstName, this.lastName,
+      this.email, this.username,
+      this.faculty, this.city, this.password, this.graduated});
 
   UserModel.fromJson(Map<String, dynamic> json) {
     // id = json['id'];

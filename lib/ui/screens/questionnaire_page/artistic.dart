@@ -16,18 +16,7 @@ class ArtisticQuest extends StatefulWidget {
 }
 
 class _ArtisticQuestState extends State<ArtisticQuest> {
-  final List _artisticList = [
-    "1.Write books or plays",
-    "2.Play a musical instrument",
-    "3.Compose or arrange music",
-    "4.Draw pictures",
-    "5.Create special effects for movies",
-    "6.Paint sets for plays",
-    "7.Write scripts for movies or television shows",
-    "8.Perform jazz or tap dance",
-    "9.Sing in a band",
-    "10.Edit movies",
-  ];
+
 
   int totalArtistic = 0;
   int totalArtistic1 = 0;
@@ -451,6 +440,18 @@ class _ArtisticQuestState extends State<ArtisticQuest> {
     }
   }
 
+  final List _artisticList = [
+    "1.Write books or plays",
+    "2.Play a musical instrument",
+    "3.Compose or arrange music",
+    "4.Draw pictures",
+    "5.Create special effects for movies",
+    "6.Paint sets for plays",
+    "7.Write scripts for movies or television shows",
+    "8.Perform jazz or tap dance",
+    "9.Sing in a band",
+    "10.Edit movies",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

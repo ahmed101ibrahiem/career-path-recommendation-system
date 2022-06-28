@@ -618,15 +618,15 @@ class _RealisticState extends State<Realistic> {
               });
             },
             functionClick4: (){
-              totalRealstic4 = ValueQue.v4;
+              totalRealstic3 = ValueQue.v4;
               setState(() {
-                changColors1(4);
+                changColors4(4);
               });
             },
             functionClick5: (){
-              totalRealstic4 = ValueQue.v5;
+              totalRealstic3 = ValueQue.v5;
               setState(() {
-                changColors1(5);
+                changColors4(5);
               });
             },
           ),

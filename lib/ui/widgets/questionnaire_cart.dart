@@ -60,7 +60,7 @@ class QuestionaireCard extends StatelessWidget {
                   ),
 
                   IconQuest(
-                    text: ' Not Sure',
+                    text: '  Not Sure',
                     iconData: CommunityMaterialIcons.emoticon_neutral,
                     functionClicks:functionClick3,
                     face: face3,

@@ -3,7 +3,7 @@ import 'package:pharus/constant/colors.dart';
 import 'package:pharus/models/career_model.dart';
 import 'package:pharus/ui/screens/courses/CoursesNames.dart';
 import 'package:pharus/ui/widgets/buttons.dart';
-
+import 'package:pharus/models/career_model.dart';
 class CareerDetails extends StatefulWidget {
   static const id = 'CareerDetails';
   CareerModel career;
@@ -85,25 +85,25 @@ class _CareerDetailsState extends State<CareerDetails> {
                               fontSize: 18, fontWeight: FontWeight.w400),
                         ),
                         SizedBox(height: 15),
-                        Text(
-                            widget.career.skills
-                                .replaceAll("'", "")
-                                .replaceAll("{", "")
-                                .replaceAll("}", ""),
-                            style: TextStyle(
-                                color: labelText, fontWeight: FontWeight.w300)),
+                        // Text(
+                        //     widget.career.skills
+                        //         .replaceAll("'", "")
+                        //         .replaceAll("{", "")
+                        //         .replaceAll("}", ""),
+                        //     style: TextStyle(
+                        //         color: labelText, fontWeight: FontWeight.w300)),
                         SizedBox(height: 15),
                         Text('Abilities:',
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.w400)),
                         SizedBox(height: 15),
-                        Text(
-                            widget.career.abilities
-                                .replaceAll("'", "")
-                                .replaceAll("{", "")
-                                .replaceAll("}", ""),
-                            style: TextStyle(
-                                color: labelText, fontWeight: FontWeight.w300))
+                        // Text(
+                        //     widget.career.abilities
+                        //         .replaceAll("'", "")
+                        //         .replaceAll("{", "")
+                        //         .replaceAll("}", ""),
+                        //     style: TextStyle(
+                        //         color: labelText, fontWeight: FontWeight.w300))
                       ],
                     ),
                   )),

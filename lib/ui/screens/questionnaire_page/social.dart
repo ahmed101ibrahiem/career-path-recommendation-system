@@ -1,11 +1,9 @@
-import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
 import 'package:pharus/constant/value_questionnaire.dart';
 import 'package:pharus/models_questionnaire/social_model.dart';
 import 'package:pharus/ui/widgets/appbar_quest.dart';
 import 'package:pharus/ui/widgets/questionnaire_cart.dart';
-import 'artistic.dart';
 import 'enterprising.dart';
 
 class Social extends StatefulWidget {

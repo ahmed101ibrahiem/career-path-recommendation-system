@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
-import 'package:pharus/ui/screens/courses/CoursesNames.dart';
 import 'package:pharus/ui/widgets/buttons.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
+
+import 'CoursesNames.dart';
 
 class courseDetail extends StatefulWidget {
   static const id = 'courseDetail';

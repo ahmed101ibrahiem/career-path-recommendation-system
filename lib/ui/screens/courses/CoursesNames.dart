@@ -4,10 +4,7 @@ import 'package:pharus/ui/screens/courses/course_detail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
-import 'package:pharus/ui/screens/register.dart';
-import 'package:pharus/ui/widgets/DropDownField.dart';
 import 'package:pharus/ui/widgets/custome_drawer.dart';
-import 'package:pharus/ui/widgets/list_tile_drawer.dart';
 
 class CoursesNames extends StatefulWidget {
   static const id = "CoursesNames";
@@ -33,79 +30,79 @@ class _CoursesNamesState extends State<CoursesNames> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF5F5F5),
-      appBar: AppBar(
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              icon: const Icon(
-                CommunityMaterialIcons.sort_reverse_variant,
-                color: primaryColor,
-                size: 40,
-              ),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            );
-          },
-        ),
-        elevation: 0,
-        backgroundColor: Colors.white12,
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.notifications,
-                color: Colors.grey,
-              )),
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.person,
-                color: Colors.grey,
-              ))
-        ],
-      ),
-      drawer:  CustomDrawer(),
+      // appBar: AppBar(
+      //   leading: Builder(
+      //     builder: (BuildContext context) {
+      //       return IconButton(
+      //         icon: const Icon(
+      //           CommunityMaterialIcons.sort_reverse_variant,
+      //           color: primaryColor,
+      //           size: 40,
+      //         ),
+      //         onPressed: () {
+      //           Scaffold.of(context).openDrawer();
+      //         },
+      //       );
+      //     },
+      //   ),
+      //   elevation: 0,
+      //   backgroundColor: Colors.white12,
+      //   actions: [
+      //     IconButton(
+      //         onPressed: () {},
+      //         icon: Icon(
+      //           Icons.notifications,
+      //           color: Colors.grey,
+      //         )),
+      //     IconButton(
+      //         onPressed: () {},
+      //         icon: Icon(
+      //           Icons.person,
+      //           color: Colors.grey,
+      //         ))
+      //   ],
+      // ),
+      // drawer:  CustomDrawer(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    child: TextDropdownFormField(
-                      decoration: InputDecoration(
-                        enabledBorder: const OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(100)),
-                          borderSide: BorderSide(color: border),
-                        ),
-                        filled: false,
-                        focusedBorder: const OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(100)),
-                          borderSide: BorderSide(color: border),
-                        ),
-                        suffixIcon: const Icon(
-                          Icons.arrow_drop_down,
-                          color: border,
-                        ),
-                        labelText: ("search"),
-                        labelStyle: TextStyle(color: border),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 35,
-                    width: 45,
-                    decoration: BoxDecoration(
-                      color: bottom,
-                      borderRadius: BorderRadius.all(Radius.circular(18)),
-                    ),
-                    child: Icon(Icons.search, color: Colors.white),
-                  ),
-                ],
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //   children: [
+              //     Expanded(
+              //       child: TextDropdownFormField(
+              //         decoration: InputDecoration(
+              //           enabledBorder: const OutlineInputBorder(
+              //             borderRadius: BorderRadius.all(Radius.circular(100)),
+              //             borderSide: BorderSide(color: border),
+              //           ),
+              //           filled: false,
+              //           focusedBorder: const OutlineInputBorder(
+              //             borderRadius: BorderRadius.all(Radius.circular(100)),
+              //             borderSide: BorderSide(color: border),
+              //           ),
+              //           suffixIcon: const Icon(
+              //             Icons.arrow_drop_down,
+              //             color: border,
+              //           ),
+              //           labelText: ("search"),
+              //           labelStyle: TextStyle(color: border),
+              //         ),
+              //       ),
+              //     ),
+              //     Container(
+              //       height: 35,
+              //       width: 45,
+              //       decoration: BoxDecoration(
+              //         color: bottom,
+              //         borderRadius: BorderRadius.all(Radius.circular(18)),
+              //       ),
+              //       child: Icon(Icons.search, color: Colors.white),
+              //     ),
+              //   ],
+              // ),
               SizedBox(
                 height: 20,
               ),

@@ -4,9 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:pharus/controllers/auth_controller.dart';
 import 'package:pharus/ui/screens/job_zone_screen.dart';
 import 'package:pharus/ui/screens/questionnaire_page/realistic.dart';
-import 'package:pharus/ui/screens/recommend_Career.dart';
-import 'package:pharus/ui/screens/success.dart';
 import 'package:provider/provider.dart';
+import 'job_zone_screen.dart';
 import 'onboard.dart';
 
 class SplashScreens extends StatefulWidget {

@@ -40,7 +40,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             } else {
               boardController.nextPage(
                   duration: const Duration(milliseconds: 600),
-                  // Here was the problem
                   curve: Curves.easeInSine);
             }
           },
@@ -55,22 +54,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         body: SafeArea(
           child: Stack(
             children: [
-              PageView.builder(
-                  controller: boardController,
-                  physics: const BouncingScrollPhysics(),
-                  itemCount: images.length,
-                  onPageChanged: (int index) {
-                    if (index == images.length - 1) {
-                      setState(() {
-                        isLast = true;
-                      });
-                    } else {
-                      setState(() {
-                        isLast = false;
-                      });
-                    }
-                  },
-                  itemBuilder: (context, index) {
+              PageView.builder( controller: boardController,
+    physics: const BouncingScrollPhysics(),
+    itemCount: images.length,
+    onPageChanged: (int index) {
+    if (index == images.length - 1) {
+    setState(() {
+    isLast = true;
+    });
+    } else {
+    setState(() {
+    isLast = false;
+    });
+    }
+    },
+    itemBuilder: (context, index) {
+
                     return Stack(
                       children: [
                         Container(),
@@ -90,8 +89,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   'SKIP',
                                   style: TextStyle(color: Color(0xFF478d8b)),
                                 ),
-                                // SizedBox(
-                                //   width: 2,
                                 // ),
                                 Icon(
                                   Icons.arrow_forward_ios_outlined,
