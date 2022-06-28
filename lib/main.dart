@@ -8,6 +8,8 @@ import 'package:pharus/ui/screens/company_view/main_home_view.dart';
 import 'package:pharus/ui/screens/company_view/see_job_application.dart';
 import 'package:pharus/ui/screens/courses/course_detail.dart';
 import 'package:pharus/ui/screens/home_nav/HomeView.dart';
+import 'package:pharus/ui/screens/home_nav/jobs_nav.dart';
+import 'package:pharus/ui/screens/profile_view.dart';
 import 'package:pharus/ui/screens/results.dart';
 import 'package:pharus/ui/screens/splash_screen.dart';
 import 'package:pharus/ui/screens/success2.dart';
@@ -49,7 +51,7 @@ class MyApp extends StatelessWidget {
             //   backgroundColor: Colors.redAccent
             // )
           ),
-          home: SplashScreens(),
+          home: HomeViewNav(),
           routes: {
             Login.id: (context) => Login(),
             Success.id: (context) => Success(),

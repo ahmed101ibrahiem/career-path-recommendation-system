@@ -4,12 +4,12 @@ import 'package:pharus/constant/colors.dart';
 
 class CusContainerProfile extends StatelessWidget {
   CusContainerProfile({
-   @required this.textTitle, this.chip1, this.chip2, this.chip3, this.chip4, this.chip5
+   @required this.textTitle, this.chip1,  this.chip3, this.chip4, this.chip5
   });
 
   final String textTitle;
   final String chip1;
-  final String chip2;
+
   final String chip3;
   final String chip4;
   final String chip5;
@@ -41,9 +41,6 @@ class CusContainerProfile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 customeChip(text: chip1),
-
-                customeChip(text: chip2),
-
                 customeChip(text: chip3),
               ],
             ),

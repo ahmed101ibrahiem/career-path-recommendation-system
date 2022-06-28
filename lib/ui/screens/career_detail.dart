@@ -66,18 +66,18 @@ class _CareerDetailsState extends State<CareerDetails> {
                           style: TextStyle(
                               color: labelText, fontWeight: FontWeight.w300),
                         ),
-                        // SizedBox(height: 15),
-                        // Text(
-                        //   'On the job,you would:',
-                        //   style: TextStyle(
-                        //       fontSize: 18, fontWeight: FontWeight.w400),
-                        // ),
-                        // SizedBox(height: 15),
-                        // Text(
-                        //   '* Inspect food product and processing procedures to determine whether products are safe to eat\n \n \n *Interpret and enforce government acts and regulations and explain required standards to agricultural workers \n \n \n * Set standard for the production of meat or poultry products or for food ingredients, additives,or compounds used to prepare or package products.',
-                        //   style: TextStyle(
-                        //       color: labelText, fontWeight: FontWeight.w300),
-                        // ),
+                         SizedBox(height: 15),
+                         Text(
+                           'On the job,you would:',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w400),
+                         ),
+                         SizedBox(height: 15),
+                         Text(
+                          '* Inspect food product and processing procedures to determine whether products are safe to eat\n \n \n *Interpret and enforce government acts and regulations and explain required standards to agricultural workers \n \n \n * Set standard for the production of meat or poultry products or for food ingredients, additives,or compounds used to prepare or package products.',
+                           style: TextStyle(
+                               color: labelText, fontWeight: FontWeight.w300),
+                         ),
                         SizedBox(height: 15),
                         Text(
                           'Skills:',
@@ -85,25 +85,25 @@ class _CareerDetailsState extends State<CareerDetails> {
                               fontSize: 18, fontWeight: FontWeight.w400),
                         ),
                         SizedBox(height: 15),
-                        // Text(
-                        //     widget.career.skills
-                        //         .replaceAll("'", "")
-                        //         .replaceAll("{", "")
-                        //         .replaceAll("}", ""),
-                        //     style: TextStyle(
-                        //         color: labelText, fontWeight: FontWeight.w300)),
+                         Text(
+                             widget.career.skills
+                                 .replaceAll("'", "")
+                                 .replaceAll("{", "")
+                                 .replaceAll("}", ""),
+                             style: TextStyle(
+                                 color: labelText, fontWeight: FontWeight.w300)),
                         SizedBox(height: 15),
                         Text('Abilities:',
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.w400)),
                         SizedBox(height: 15),
-                        // Text(
-                        //     widget.career.abilities
-                        //         .replaceAll("'", "")
-                        //         .replaceAll("{", "")
-                        //         .replaceAll("}", ""),
-                        //     style: TextStyle(
-                        //         color: labelText, fontWeight: FontWeight.w300))
+                    Text(
+                            widget.career.abilities
+                                 .replaceAll("'", "")
+                               .replaceAll("{", "")
+                                .replaceAll("}", ""),
+                           style: TextStyle(
+                               color: labelText, fontWeight: FontWeight.w300))
                       ],
                     ),
                   )),

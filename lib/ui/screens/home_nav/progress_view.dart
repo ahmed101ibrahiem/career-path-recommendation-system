@@ -52,7 +52,7 @@ class _ProgressViewState extends State<ProgressView> {
                       height: 12,
                     ),
                     SizedBox(
-                      height: 230,
+                      height: MediaQuery.of(context).size.height * 0.29,
                       child:
                           ListView(scrollDirection: Axis.horizontal, children: [
                         CardDatas(

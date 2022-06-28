@@ -5,6 +5,9 @@ import 'package:pharus/constant/colors.dart';
 import 'package:pharus/ui/screens/recommend_Career.dart';
 import 'package:pharus/ui/widgets/custome_container_proffile.dart';
 
+import 'company_view/main_home_view.dart';
+import 'home_nav/HomeView.dart';
+
 
 class ProfileView extends StatelessWidget {
   static const id = 'ProfileView';
@@ -26,7 +29,9 @@ class ProfileView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     InkWell(
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeViewNav()));
+                      },
                         child: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
                      SizedBox(
                       height: 60.0,
@@ -49,7 +54,7 @@ class ProfileView extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Following\n954',textAlign: TextAlign.center,
+                    Text('Following\n8',textAlign: TextAlign.center,
                     style: TextStyle(
                         color: primaryColor
                     ),),
@@ -58,7 +63,7 @@ class ProfileView extends StatelessWidget {
                       radius: 40,
                       backgroundImage: NetworkImage('https://t4.ftcdn.net/jpg/03/83/25/83/360_F_383258331_D8imaEMl8Q3lf7EKU2Pi78Cn0R7KkW9o.jpg'),),
                     SizedBox(width: 12,),
-                    Text('Followers\n231',
+                    Text('Followers\n12',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: primaryColor
@@ -70,16 +75,16 @@ class ProfileView extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('Edith Pieff',textAlign: TextAlign.center,
+                    Text('Basma Nasr',textAlign: TextAlign.center,
                       style: TextStyle(
                           color: primaryColor,
                         fontWeight: FontWeight.bold
                       ),),
-                    Text('userName@info.com',textAlign: TextAlign.center,
+                    Text('Basma.Nasr77@gmail.com',textAlign: TextAlign.center,
                       style: TextStyle(
                           color: primaryColor
                       ),),
-                    Text('Location',textAlign: TextAlign.center,
+                    Text('Cairo',textAlign: TextAlign.center,
                       style: TextStyle(
                           color: primaryColor
                       ),),
@@ -107,7 +112,7 @@ class ProfileView extends StatelessWidget {
                       ),
                       elevation: 5,
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,7 +120,7 @@ class ProfileView extends StatelessWidget {
                             Align(
                                 alignment: Alignment.topLeft,
                                 child: Icon(CommunityMaterialIcons.account_tie,color: primaryColor,size: 62,)),
-                            Text('Go To My Learning Pr',style: TextStyle(
+                            Text('Go To My Learning\nProfile.',style: TextStyle(
                               color: Colors.black
                             ),),
                             Align(
@@ -188,16 +193,16 @@ class ProfileView extends StatelessWidget {
               ),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.02,),
-            CusContainerProfile(textTitle: 'Skills',chip1: 'Skill',chip2: 'Skill',
-            chip3: 'Long Example Skill',chip4: 'Skill', chip5: 'Skill',
+            CusContainerProfile(textTitle: 'Skill',chip1: 'Teamwork',
+            chip3: 'SELF-CONFIDENCE ',chip4:'EMPATHY', chip5: 'COMMUNICATION',
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.02,),
-            CusContainerProfile(textTitle: 'Technical Skills',chip1: 'Skill',chip2: 'Skill',
-              chip3: 'Long Example Skill',chip4: 'Skill', chip5: 'Skill',
+            CusContainerProfile(textTitle: 'Technical Skills',chip1: 'problem solving',
+              chip3: 'Dart & Flutter',chip4: 'oop', chip5: 'design pattern',
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
-            CusContainerProfile(textTitle: 'Interest',chip1: 'Skill',chip2: 'Skill',
-              chip3: 'Long Example Skill',chip4: 'Skill', chip5: 'Skill',
+            CusContainerProfile(textTitle: 'Interest',chip1: 'watching TV ',
+              chip3: 'Music',chip4: 'running', chip5: 'Reading',
             ),
           ],
         ),

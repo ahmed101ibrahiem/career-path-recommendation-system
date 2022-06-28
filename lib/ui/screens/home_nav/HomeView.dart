@@ -7,6 +7,7 @@ import 'package:pharus/ui/screens/home_nav/progress_view.dart';
 import 'package:pharus/ui/widgets/custome_drawer.dart';
 
 import '../profile_view.dart';
+import 'jobs_nav.dart';
 
 class HomeViewNav extends StatefulWidget {
   static String id = 'HomeViewNav';
@@ -19,7 +20,7 @@ class HomeViewNav extends StatefulWidget {
 
 class _HomeViewNavState extends State<HomeViewNav> {
   int currentIndexItem = 3;
-  List screens = [CoursesNames(), ProfileView(), CoursesNames(), ProgressView()];
+  List screens = [ProfileView(),NavJobs(), CoursesNames(), ProgressView()];
 
   @override
   Widget build(BuildContext context) {

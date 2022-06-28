@@ -81,7 +81,7 @@ class _CompanyHomeState extends State<CompanyHome> {
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>AddJobScreen()));
                       },
-                      child: companyCard(title: 'Add Job',iconData: CommunityMaterialIcons.account_tie,))
+                      child: companyCard(title: 'Apply',iconData: CommunityMaterialIcons.account_tie,))
                 ],
               ),
             ),

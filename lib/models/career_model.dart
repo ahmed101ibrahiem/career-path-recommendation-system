@@ -4,6 +4,8 @@ class CareerModel {
   String description;
   String title;
   String interest_code;
+  String abilities;
+  String skills;
   int job_zone;
   int id;
   CareerModel({
@@ -12,6 +14,8 @@ class CareerModel {
     this.interest_code,
     this.job_zone,
     this.id,
+    this.abilities,
+    this.skills
   });
 
   Map<String, dynamic> toMap() {
@@ -22,6 +26,8 @@ class CareerModel {
     result.addAll({'interest_code': interest_code});
     result.addAll({'job_zone': job_zone});
     result.addAll({'id': id});
+    result.addAll({'abilities': abilities});
+    result.addAll({'skills':skills});
 
     return result;
   }
@@ -33,6 +39,8 @@ class CareerModel {
       interest_code: map['interest_code'] ?? '',
       job_zone: map['job_zone']?.toInt() ?? 0,
       id: map['id']?.toInt() ?? 0,
+      abilities: map['skills'] ?? '',
+      skills: map['abilities'] ?? ''
     );
   }
 
@@ -45,6 +53,8 @@ class CareerModel {
     String description,
     String title,
     String interest_code,
+    String abilities,
+    String skills,
     int job_zone,
     int id,
   }) {
@@ -54,6 +64,8 @@ class CareerModel {
       interest_code: interest_code ?? this.interest_code,
       job_zone: job_zone ?? this.job_zone,
       id: id ?? this.id,
+      skills: skills ?? this.skills,
+      abilities: abilities ?? this.abilities
     );
   }
 }
