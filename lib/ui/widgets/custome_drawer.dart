@@ -2,6 +2,7 @@ import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:pharus/constant/colors.dart';
 import 'package:pharus/controllers/auth_controller.dart';
+import 'package:pharus/ui/screens/company_view/main_home_view.dart';
 import 'package:pharus/ui/screens/profile_view.dart';
 import 'package:provider/provider.dart';
 
@@ -50,6 +51,18 @@ class CustomDrawer extends StatelessWidget {
                     text: '3D virtual Recruitment',
                     iconData: CommunityMaterialIcons.rotate_3d),
                 listTileDrawer(text: 'Saved', iconData: Icons.bookmark),
+
+                listTileDrawer(
+                    text: 'Company',
+                    iconData: Icons.apartment,
+
+                    pressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CompanyHome()));
+                    }),
+
                 listTileDrawer(
                     text: 'Setting', iconData: CommunityMaterialIcons.cogs),
                 listTileDrawer(text: 'About', iconData: Icons.info),

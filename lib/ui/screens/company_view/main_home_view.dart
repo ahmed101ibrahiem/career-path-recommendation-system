@@ -1,6 +1,5 @@
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:pharus/constant/colors.dart';
 import 'package:pharus/ui/widgets/card_company.dart';
 
 import 'add_event.dart';
@@ -71,7 +70,7 @@ class _CompanyHomeState extends State<CompanyHome> {
                         });
 
                       },
-                      child: companyCard(title: 'Events',iconData: CommunityMaterialIcons.calendar_clock,)),
+                      child: companyCard(title: 'Events',iconData: CommunityMaterialIcons.youtube_tv,)),
                   InkWell(
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>AddEventScreen()));
@@ -81,7 +80,7 @@ class _CompanyHomeState extends State<CompanyHome> {
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>AddJobScreen()));
                       },
-                      child: companyCard(title: 'Apply',iconData: CommunityMaterialIcons.account_tie,))
+                      child: companyCard(title: 'Add Jobs',iconData: CommunityMaterialIcons.account_tie,))
                 ],
               ),
             ),

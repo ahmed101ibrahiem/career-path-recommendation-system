@@ -113,7 +113,7 @@ class _JobsState extends State<JobsCompany> {
                           ),
                           child: const Center(
                             child: Text(
-                              "See Job applicants",
+                              "Apply",
                               style: TextStyle(
                                   color: Colors.white
                               ),
