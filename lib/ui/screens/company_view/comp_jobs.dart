@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 
+import 'job_aplication.dart';
 import 'main_home_view.dart';
 
 class CompanyJobs extends StatelessWidget {
@@ -54,6 +55,17 @@ class CompanyJobs extends StatelessWidget {
                   images: 'https://algoteque.com/wp-content/uploads/2019/04/1AwvDJDfErlD34ox2QpwGoA.png',
                   subtitle: 'ob Description About UsWe are one of the fastest-growing social media platform founded on the principles of free speech, independent thought and rejecting political censorship and “cancel culture.” With best-in-class technology, our goal is to create a marketplace of ideas to share freedom and democracy around the world. We foster a healthy marketplace of ideas, where smart, motivated, curious people bring a diversity of opinions and the courage of their convictions for idea collaboration.Challenges you will solve:Participate in all stages of infrastructure provisioning, from POC to production support.Assist in the implementation of security best practices and initiatives at all levels of the systems infrastructure.Adhere to DevOps & SRE (Site Reliability Engineer) principles/pillars.Align with SDLC',),
 
+
+                SizedBox(height: 10.0,),
+
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>JobsCompany()));
+                  },
+                  child: companyCardJobs(courseTitle: 'Senior Flutter Mobile Developer. \n------------------\nJob Description:',
+                      images: 'https://jackfruit.com.vn/content/images/2022/01/6078b650748b8558d46ffb7f_Flutter-app-development.png',
+                      subtitle: 'Developing new features and user interfaces from wire-frame models. \n• Ensuring the best performance and user experience of the application. \n• Fixing bugs and performance problems. \n• Writing clean, readable, and testable code. \n• Cooperating with back-end developers, designers, and the rest of the team to deliver well-architected and high-quality solutions. \n• Write well-designed, scalable, robust, testable, efficient, and easily maintainable code.'),
+                ),
 
                 SizedBox(height: 10.0,),
                 companyCardJobs(courseTitle: 'Advanced Cyber Sec Arch/Eng. \n------------------\nJob Description:',

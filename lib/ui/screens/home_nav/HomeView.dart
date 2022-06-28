@@ -19,7 +19,7 @@ class HomeViewNav extends StatefulWidget {
 }
 
 class _HomeViewNavState extends State<HomeViewNav> {
-  int currentIndexItem = 3;
+  int currentIndexItem = 1;
   List screens = [ProfileView(),NavJobs(), CoursesNames(), ProgressView()];
 
   @override

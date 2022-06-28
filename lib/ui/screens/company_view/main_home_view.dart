@@ -1,5 +1,6 @@
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:pharus/ui/screens/home_nav/HomeView.dart';
 import 'package:pharus/ui/widgets/card_company.dart';
 
 import 'add_event.dart';
@@ -34,7 +35,7 @@ class _CompanyHomeState extends State<CompanyHome> {
           IconButton(onPressed: (){}, icon:const Icon (CommunityMaterialIcons.account_circle,color: Colors.teal,))
         ],
         leading: IconButton(icon: const Icon(Icons.arrow_back_ios_sharp,color: Colors.teal,),onPressed: (){
-          Navigator.pop(context);
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeViewNav()));
         },),
       ),
       body: SingleChildScrollView(
