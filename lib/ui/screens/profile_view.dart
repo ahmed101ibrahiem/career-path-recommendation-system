@@ -5,7 +5,6 @@ import 'package:pharus/constant/colors.dart';
 import 'package:pharus/ui/screens/recommend_Career.dart';
 import 'package:pharus/ui/widgets/custome_container_proffile.dart';
 
-import 'company_view/main_home_view.dart';
 import 'home_nav/HomeView.dart';
 
 
@@ -33,10 +32,13 @@ class ProfileView extends StatelessWidget {
                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeViewNav()));
                       },
                         child: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
-                     SizedBox(
-                      height: 60.0,
-                      child: Image.asset('images/logo.png',fit: BoxFit.cover,),
+                     Padding(
+                       padding: const EdgeInsets.only(top: 8),
+                       child: SizedBox(
+                        height: 60.0,
+                        child: Image.asset('images/logos-removebg.png',fit: BoxFit.cover,),
                     ),
+                     ),
                     Row(
                       children: [
                         InkWell(

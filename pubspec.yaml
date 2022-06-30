@@ -72,6 +72,7 @@ flutter:
   assets:
    - images/
    - images/logo.png
+   - images/logos-removebg.png
    
   #   - images/a_dot_ham.jpeg
 

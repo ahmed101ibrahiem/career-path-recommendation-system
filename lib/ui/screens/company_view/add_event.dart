@@ -106,21 +106,12 @@ class _AddEventScreenState extends State<AddEventScreen> {
                   ],
                 ),
                 const SizedBox(height: 30.0,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const[
-                    Text("ــــــــــــــــــــــــــــــــــ",
-                      style: TextStyle(
-                        color: Colors.teal,
-                      ),
-                    ),
-                    Text(" Logo ",style: TextStyle(
-                      color: Colors.black,
-                    ),),
-                    Text("ـــــــــــــــــــــــــــــــــ",style: TextStyle(
-                      color: Colors.teal,
-                    ),),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(top: 8,right: 16),
+                  child: SizedBox(
+                    height: 64.0,
+                    child: Image.asset('images/logos-removebg.png',fit: BoxFit.cover,),
+                  ),
                 ),
                 const SizedBox(height: 40.0,),
                 GestureDetector(
