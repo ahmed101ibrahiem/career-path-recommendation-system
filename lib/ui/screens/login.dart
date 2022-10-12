@@ -18,6 +18,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Consumer<AuthController>(builder: (context, value, child) {
@@ -59,6 +60,7 @@ class _LoginState extends State<Login> {
                         await value.login(emailController.text,
                             passwordController.text, context);
                       }),
+                      // log in screen
                       Row(
                         children: [
                           SizedBox(

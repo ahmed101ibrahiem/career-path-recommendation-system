@@ -49,7 +49,7 @@ class _JobZoneScreenState extends State<JobZoneScreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 28.0),
                 child: Text(
-                  'Different careers need different amounts of  preparation. please pick a Job Zone you  want to work in',
+                  'Different careers need different amounts of  preparation. want to work in',
                   style: TextStyle(color: Colors.grey.shade700),
                 ),
               ),
